@@ -1,43 +1,106 @@
 {
-  "name": "mini-gest",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^26.0.23",
-    "@types/node": "^12.20.13",
-    "@types/react": "^17.0.8",
-    "@types/react-dom": "^17.0.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.3.2",
-    "web-vitals": "^1.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "easy-amazon-order-converter",
+    "main": "public/electron.js",
+    "homepage": "./",
+    "version": "0.1.0",
+    "private": true,
+    "author": {
+        "name": "Stefano Pascazi",
+        "email": "stefanopascazi@gmail.com",
+        "url": "https://www.stefanopascazi.com"
+    },
+    "build": {
+        "appId": "com.easyamazonorderconverter.www",
+        "artifactName": "easy-amazon-order-converter-${version}-${arch}.${ext}",
+        "extraFiles": {
+            "from": "./build",
+            "to": "./dist"
+        },
+        "win": {
+            "icon": "./build/icons/icon.ico"
+        },
+        "linux": {
+            "icon": "./build/icon.png",
+            "category": "Utility",
+            "target": [{
+                    "target": "deb"
+                },
+                {
+                    "target": "AppImage"
+                }
+            ]
+        },
+        "protocols": [{
+            "name": "electron-deep-linking",
+            "schemes": [
+                "device"
+            ]
+        }]
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@fortawesome/free-solid-svg-icons": "^5.15.3",
+        "@fortawesome/react-fontawesome": "^0.1.14",
+        "@testing-library/jest-dom": "^5.12.0",
+        "@testing-library/react": "^11.2.7",
+        "@testing-library/user-event": "^12.8.3",
+        "@types/jest": "^26.0.23",
+        "@types/node": "^12.20.13",
+        "@types/react": "^17.0.8",
+        "@types/react-dom": "^17.0.5",
+        "bootstrap": "^4.6.0",
+        "concurrently": "^6.2.0",
+        "cross-env": "^7.0.3",
+        "electron-is-dev": "^2.0.0",
+        "fs": "^0.0.1-security",
+        "papaparse": "^5.3.1",
+        "react": "^17.0.2",
+        "react-bootstrap": "^1.6.1",
+        "react-dom": "^17.0.2",
+        "react-scripts": "4.0.3",
+        "typescript": "^4.3.2",
+        "wait-on": "^5.3.0",
+        "web-vitals": "^1.1.2"
+    },
+    "scripts": {
+        "react:start": "react-scripts start",
+        "react:build": "react-scripts build",
+        "react:test": "react-scripts test",
+        "react:eject": "react-scripts eject",
+        "release": "npm run react:build && npm run electron-builder --publish=always",
+        "electron:generate:icons": "electron-icon-builder --input=./public/logo512.png --output=./ --flatten && cp -r ./icons/* ./build",
+        "electron:build": "electron-builder",
+        "electron:build:linux": "electron-builder --linux",
+        "electron:build:win": "electron-builder -w",
+        "electron:build:win:32": "electron-builder --ia32 -w",
+        "electron:build:win:64": "electron-builder --x64 -w",
+        "build:linux": "npm run react:build && npm run electron:generate:icons && npm run electron:build:linux",
+        "build:win": "npm run react:build && npm run electron:generate:icons && npm run electron:build:win:32 && npm run electron:build:win:64",
+        "build": "npm run react:build && npm run electron:generate:icons && npm run electron:build:linux && npm run electron:build:win",
+        "electron:deploy": "electron-builder --linux --win",
+        "start": "concurrently \"cross-env BROWSER=none npm run react:start\" \"wait-on http://localhost:3000 && electron .\""
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "electron": "^13.0.1",
+        "electron-builder": "^22.10.5",
+        "electron-icon-builder": "^2.0.1"
+    }
 }
