@@ -3,7 +3,7 @@
     "main": "public/electron.js",
     "homepage": "./",
     "description": "Sample electron app for convert Amazon Order to SDA Crono LDV",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "private": true,
     "author": {
         "name": "Stefano Pascazi",
@@ -23,7 +23,8 @@
         "linux": {
             "icon": "./build/icon.png",
             "category": "Utility",
-            "target": [{
+            "target": [
+                {
                     "target": "deb"
                 },
                 {
@@ -31,12 +32,14 @@
                 }
             ]
         },
-        "protocols": [{
-            "name": "electron-deep-linking",
-            "schemes": [
-                "device"
-            ]
-        }]
+        "protocols": [
+            {
+                "name": "electron-deep-linking",
+                "schemes": [
+                    "device"
+                ]
+            }
+        ]
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.35",
