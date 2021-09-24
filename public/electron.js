@@ -52,6 +52,7 @@ var electron_1 = require("electron");
 var path_1 = __importDefault(require("path"));
 var electron_is_dev_1 = __importDefault(require("electron-is-dev"));
 var fs_1 = __importDefault(require("fs"));
+var electron_updater_1 = require("electron-updater");
 var mainWindow;
 var createWindow = function () {
     mainWindow = new electron_1.BrowserWindow({
@@ -71,6 +72,9 @@ var createWindow = function () {
      */
     mainWindow.loadURL(electron_is_dev_1.default ? "http://localhost:3000" : "file://" + path_1.default.join(__dirname, "../build/index.html"));
     mainWindow.on("closed", function () { return (mainWindow.destroy()); });
+    mainWindow.once("ready-to-show", function () {
+        electron_updater_1.autoUpdater.checkForUpdatesAndNotify();
+    });
 };
 electron_1.app.on("ready", createWindow);
 electron_1.app.on("window-all-closed", function () {
@@ -205,6 +209,15 @@ var save = function (content) {
  */
 electron_1.ipcMain.on('app_version', function (event) {
     event.sender.send('app_version', { version: electron_1.app.getVersion() });
+});
+electron_updater_1.autoUpdater.on("update-available", function () {
+    mainWindow.webContents.send("update_available");
+});
+electron_updater_1.autoUpdater.on("update-downloaded", function () {
+    mainWindow.webContents.send("update_downloaded");
+});
+electron_1.ipcMain.on('restart_app', function () {
+    electron_updater_1.autoUpdater.quitAndInstall();
 });
 /**end */
 /**

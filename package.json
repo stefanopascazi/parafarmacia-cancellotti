@@ -14,34 +14,6 @@
         "type": "git",
         "url": "https://github.com/stefanopascazi/parafarmacia-cancellotti"
     },
-    "build": {
-        "appId": "com.stefanopascazi.easyamazonorderconverter",
-        "artifactName": "easy-amazon-order-converter-${version}-${arch}.${ext}",
-        "extraFiles": {
-            "from": "./build",
-            "to": "./dist"
-        },
-        "win": {
-            "icon": "./build/icons/icon.ico"
-        },
-        "linux": {
-            "icon": "./build/icon.png",
-            "category": "Utility",
-            "target": [{
-                    "target": "deb"
-                },
-                {
-                    "target": "AppImage"
-                }
-            ]
-        },
-        "protocols": [{
-            "name": "electron-deep-linking",
-            "schemes": [
-                "device"
-            ]
-        }]
-    },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.35",
         "@fortawesome/free-solid-svg-icons": "^5.15.3",
@@ -74,16 +46,16 @@
         "electron:ts:compile": "tsc --project ./public && npm run electron:start",
         "release": "npm run react:build && npm run electron-builder --publish=always",
         "electron:generate:icons": "electron-icon-builder --input=./public/logo512.png --output=./ --flatten && cp -r ./icons/* ./build",
-        "electron:build": "electron-builder build --win --linux",
+        "electron:build": "electron-builder build --win --linux --publish never",
+        "electron:deploy": "electron-builder build --win --linux --publish always",
         "electron:build:linux": "electron-builder --linux",
         "electron:build:win": "electron-builder -w",
         "electron:build:win:32": "electron-builder --ia32 -w",
         "electron:build:win:64": "electron-builder --x64 -w",
         "build:linux": "npm run react:build && npm run electron:generate:icons && npm run electron:build:linux",
         "build:win": "npm run react:build && npm run electron:generate:icons && npm run electron:build:win:32 && npm run electron:build:win:64",
-        "build": "npm run react:build && npm run electron:generate:icons && npm run electron:build --publish never",
-        "deploy": "npm run react:build && npm run electron:generate:icons && npm run electron:build --publish always",
-        "electron:deploy": "electron-builder --linux --win",
+        "build": "npm run react:build && npm run electron:generate:icons && npm run electron:build",
+        "deploy": "npm run react:build && npm run electron:generate:icons && npm run electron:deploy",
         "start": "concurrently \"cross-env BROWSER=none npm run react:start\" \"wait-on http://localhost:3000 && npm run electron:ts:compile\""
     },
     "eslintConfig": {
