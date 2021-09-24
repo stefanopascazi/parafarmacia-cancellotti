@@ -201,6 +201,13 @@ var save = function (content) {
     });
 };
 /**
+ * Auto updater
+ */
+electron_1.ipcMain.on('app_version', function (event) {
+    event.sender.send('app_version', { version: electron_1.app.getVersion() });
+});
+/**end */
+/**
  * custom message
  */
 electron_1.ipcMain.on("saveFile", function (e, content) {

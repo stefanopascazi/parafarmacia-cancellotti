@@ -4,16 +4,16 @@ import React from 'react'
 const Thead = ({rows}) => {
     return <thead>
         <tr>
-            {rows[0].map((row,i) => <th key={i}>{row} | {i}</th> )}
+            {rows[0].map((row: string,i: number) => <th key={i}>{row}</th> )}
         </tr>
     </thead>
 }
 
 const Tbody = ({rows}) => {
     return <tbody>
-        { rows.slice(1).map((row,i) => {
+        { rows.slice(1).map((row: Array<string>,i: number) => {
             return <tr key={i}>
-                {row.map((line, a) => { return <td key={a}>{line}</td>})}
+                {row.map((line: string, a: number) => { return <td key={a}>{line}</td>})}
             </tr>
         })}
     </tbody>
