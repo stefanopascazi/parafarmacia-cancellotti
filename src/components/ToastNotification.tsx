@@ -11,19 +11,21 @@ const ToastNotification: React.FC = (): JSX.Element => {
 	const toogleToast = ():void => setToast(!toast)
 	const toogleDownload = ():void => setToastDownload(!toastDownload)
 
-    ipcRenderer.on("update_available", () => {
-        ipcRenderer.removeAllListeners("update_available")
-        setToast(true)
-    })
+    React.useEffect(() => {
+        ipcRenderer.on("update_available", () => {
+            ipcRenderer.removeAllListeners("update_available")
+            setToast(true)
+        })
 
-    ipcRenderer.on("update_downloaded", () => {
-        ipcRenderer.removeAllListeners("update_downloaded")
-        setToastDownload(true)
-    })
+        ipcRenderer.on("update_downloaded", () => {
+            ipcRenderer.removeAllListeners("update_downloaded")
+            setToastDownload(true)
+        })
+    }, [])
 
     const restartApp = () => {
-        ipcRenderer.send('restart_app');
-      }
+        ipcRenderer.send('restart_app');      
+    }
 
     return (
         <ToastContainer position={"bottom-start"}>
