@@ -1,12 +1,12 @@
 import React from 'react';
 /**layout and part of */
 import Home from './pages/index'
-import { Container, Row, Col, Navbar } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import ToastNotification from './components/ToastNotification';
 import Bar from './components/Bar';
 import Sidebar from './components/Sidebar';
 
-const { ipcRenderer } = window.require("electron");
+const { ipcRenderer }: any = window.require("electron");
 
 const App: React.FC = (): JSX.Element => {
 

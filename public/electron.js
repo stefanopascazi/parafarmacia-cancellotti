@@ -237,3 +237,10 @@ electron_1.ipcMain.on("loadFile", function (e, args) {
         e.returnValue = newRows;
     });
 });
+/**
+ * testing
+ */
+// ipcMain.on("test", (e, args) => {
+//     console.log(province)
+//     e.returnValue = "done"
+// })

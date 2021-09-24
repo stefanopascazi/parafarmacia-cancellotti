@@ -23,7 +23,7 @@ const ToastNotification: React.FC = (): JSX.Element => {
         })
     }, [])
 
-    const restartApp = () => {
+    const restartApp = (): void => {
         ipcRenderer.send('restart_app');      
     }
 

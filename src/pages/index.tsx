@@ -2,15 +2,19 @@ import React, { ReactNode } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap'
 import { Table } from '../components/Table'
 
+interface Provincia {
+    text:string,
+    value:string,
+    regione: string;
+}
 
 const { ipcRenderer } = window.require("electron");
-
+const province: Provincia[] = require('../components/data.json')
 interface IHomeDataInterface {
-    searchText?: string,
     children?: ReactNode
 }
 
-const Home: React.FC<IHomeDataInterface> = ({ searchText, children }: IHomeDataInterface): JSX.Element => {
+const Home: React.FC<IHomeDataInterface> = ({ children }: IHomeDataInterface): JSX.Element => {
 
     const [rows, setRows] = React.useState<string[][] | false>(false)
 
@@ -18,22 +22,25 @@ const Home: React.FC<IHomeDataInterface> = ({ searchText, children }: IHomeDataI
         const file = e.target.files[0];
         console.log(e.target.files[0]);
 
-        const array = ipcRenderer.sendSync("loadFile", (file as any).path)
+        const array: string[][] = ipcRenderer.sendSync("loadFile", (file as any).path)
 
         setRows(array)
         e.target.value = ""
 
     }
 
-    const save = () => {
+    const save = (): void => {
 
-        const csv = rows && rows.slice(1).map((row) => {
-            const lines = `${row[17]},${row[17]},${row[18]},${row[23]},${row[21]},${row[22]},ITA,${row[9]},,${row[9]},`
+        const csv: string[] = rows && rows.slice(1).map( (row: string[]) => {
+            
+            const value: Provincia | false = province.find( (element: Provincia) => element.text === row[22] ? element : false )
+
+            const lines: string = `${row[17]},${row[17]},${row[18]},${row[23]},${row[21]},${value ? value.value : row[22]},ITA,${row[9]},,${row[9]},`
             return lines
         })
-        
-        const result = ipcRenderer.sendSync("saveFile", csv.join("\n"))
-        return result && true;
+
+        const content: string = csv.join("\n");        
+        ipcRenderer.sendSync("saveFile", content)
     }
 
     const clean = ():void => {
@@ -55,6 +62,7 @@ const Home: React.FC<IHomeDataInterface> = ({ searchText, children }: IHomeDataI
         </Row>
         
         {rows && <Table rows={rows} />}
+        {children && children}
     </>
 }
 

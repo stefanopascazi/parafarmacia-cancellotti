@@ -1,0 +1,551 @@
+[{
+        "text": "Agrigento",
+        "value": "AG",
+        "regione": "Sicilia"
+    },
+    {
+        "text": "Alessandria",
+        "value": "AL",
+        "regione": "Piemonte"
+    },
+    {
+        "text": "Ancona",
+        "value": "AN",
+        "regione": "Marche"
+    },
+    {
+        "text": "Arezzo",
+        "value": "AR",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Aosta",
+        "value": "AO",
+        "regione": "Valle d'Aosta"
+    },
+    {
+        "text": "Ascoli Piceno",
+        "value": "AP",
+        "regione": "Marche"
+    },
+    {
+        "text": "Asti",
+        "value": "AT",
+        "regione": "Piemonte"
+    },
+    {
+        "text": "Avellino",
+        "value": "AV",
+        "regione": "Campania"
+    },
+    {
+        "text": "Bari",
+        "value": "BA",
+        "regione": "Puglia"
+    },
+    {
+        "text": "Barletta-Andria-Trani",
+        "value": "BT",
+        "regione": "Puglia"
+    },
+    {
+        "text": "Belluno",
+        "value": "BL",
+        "regione": "Veneto"
+    },
+    {
+        "text": "Benevento",
+        "value": "BN",
+        "regione": "Campania"
+    },
+    {
+        "text": "Bergamo",
+        "value": "BG",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Biella",
+        "value": "BI",
+        "regione": "Piemonte"
+    },
+    {
+        "text": "Bologna",
+        "value": "BO",
+        "regione": "Emilia-Romagna"
+    },
+    {
+        "text": "Bolzano/Bozen",
+        "value": "BZ",
+        "regione": "Trentino-Alto Adige/Südtirol"
+    },
+    {
+        "text": "Brescia",
+        "value": "BS",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Brindisi",
+        "value": "BR",
+        "regione": "Puglia"
+    },
+    {
+        "text": "Cagliari",
+        "value": "CA",
+        "regione": "Sardegna"
+    },
+    {
+        "text": "Caltanissetta",
+        "value": "CL",
+        "regione": "Sicilia"
+    },
+    {
+        "text": "Campobasso",
+        "value": "CB",
+        "regione": "Molise"
+    },
+    {
+        "text": "Carbonia-Iglesias",
+        "value": "CI",
+        "regione": "Sardegna"
+    },
+    {
+        "text": "Caserta",
+        "value": "CE",
+        "regione": "Campania"
+    },
+    {
+        "text": "Catania",
+        "value": "CT",
+        "regione": "Sicilia"
+    },
+    {
+        "text": "Catanzaro",
+        "value": "CZ",
+        "regione": "Calabria"
+    },
+    {
+        "text": "Chieti",
+        "value": "CH",
+        "regione": "Abruzzo"
+    },
+    {
+        "text": "Como",
+        "value": "CO",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Cosenza",
+        "value": "CS",
+        "regione": "Calabria"
+    },
+    {
+        "text": "Cremona",
+        "value": "CR",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Crotone",
+        "value": "KR",
+        "regione": "Calabria"
+    },
+    {
+        "text": "Cuneo",
+        "value": "CN",
+        "regione": "Piemonte"
+    },
+    {
+        "text": "Enna",
+        "value": "EN",
+        "regione": "Sicilia"
+    },
+    {
+        "text": "Fermo",
+        "value": "FM",
+        "regione": "Marche"
+    },
+    {
+        "text": "Ferrara",
+        "value": "FE",
+        "regione": "Emilia-Romagna"
+    },
+    {
+        "text": "Firenze",
+        "value": "FI",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Foggia",
+        "value": "FG",
+        "regione": "Puglia"
+    },
+    {
+        "text": "Forlì-Cesena",
+        "value": "FC",
+        "regione": "Emilia-Romagna"
+    },
+    {
+        "text": "Frosinone",
+        "value": "FR",
+        "regione": "Lazio"
+    },
+    {
+        "text": "Genova",
+        "value": "GE",
+        "regione": "Liguria"
+    },
+    {
+        "text": "Gorizia",
+        "value": "GO",
+        "regione": "Friuli-Venezia Giulia"
+    },
+    {
+        "text": "Grosseto",
+        "value": "GR",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Imperia",
+        "value": "IM",
+        "regione": "Liguria"
+    },
+    {
+        "text": "Isernia",
+        "value": "IS",
+        "regione": "Molise"
+    },
+    {
+        "text": "L'Aquila",
+        "value": "AQ",
+        "regione": "Abruzzo"
+    },
+    {
+        "text": "La Spezia",
+        "value": "SP",
+        "regione": "Liguria"
+    },
+    {
+        "text": "Latina",
+        "value": "LT",
+        "regione": "Lazio"
+    },
+    {
+        "text": "Lecce",
+        "value": "LE",
+        "regione": "Puglia"
+    },
+    {
+        "text": "Lecco",
+        "value": "LC",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Livorno",
+        "value": "LI",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Lodi",
+        "value": "LO",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Lucca",
+        "value": "LU",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Macerata",
+        "value": "MC",
+        "regione": "Marche"
+    },
+    {
+        "text": "Mantova",
+        "value": "MN",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Massa-Carrara",
+        "value": "MS",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Matera",
+        "value": "MT",
+        "regione": "Basilicata"
+    },
+    {
+        "text": "Medio Campidano",
+        "value": "VS",
+        "regione": "Sardegna"
+    },
+    {
+        "text": "Messina",
+        "value": "ME",
+        "regione": "Sicilia"
+    },
+    {
+        "text": "Milano",
+        "value": "MI",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Modena",
+        "value": "MO",
+        "regione": "Emilia-Romagna"
+    },
+    {
+        "text": "Monza e della Brianza",
+        "value": "MB",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Napoli",
+        "value": "NA",
+        "regione": "Campania"
+    },
+    {
+        "text": "Novara",
+        "value": "NO",
+        "regione": "Piemonte"
+    },
+    {
+        "text": "Nuoro",
+        "value": "NU",
+        "regione": "Sardegna"
+    },
+    {
+        "text": "Ogliastra",
+        "value": "OG",
+        "regione": "Sardegna"
+    },
+    {
+        "text": "Olbia-Tempio",
+        "value": "OT",
+        "regione": "Sardegna"
+    },
+    {
+        "text": "Oristano",
+        "value": "OR",
+        "regione": "Sardegna"
+    },
+    {
+        "text": "Padova",
+        "value": "PD",
+        "regione": "Veneto"
+    },
+    {
+        "text": "Palermo",
+        "value": "PA",
+        "regione": "Sicilia"
+    },
+    {
+        "text": "Parma",
+        "value": "PR",
+        "regione": "Emilia-Romagna"
+    },
+    {
+        "text": "Pavia",
+        "value": "PV",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Perugia",
+        "value": "PG",
+        "regione": "Umbria"
+    },
+    {
+        "text": "Pesaro e Urbino",
+        "value": "PU",
+        "regione": "Marche"
+    },
+    {
+        "text": "Pescara",
+        "value": "PE",
+        "regione": "Abruzzo"
+    },
+    {
+        "text": "Piacenza",
+        "value": "PC",
+        "regione": "Emilia-Romagna"
+    },
+    {
+        "text": "Pisa",
+        "value": "PI",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Pistoia",
+        "value": "PT",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Pordenone",
+        "value": "PN",
+        "regione": "Friuli-Venezia Giulia"
+    },
+    {
+        "text": "Potenza",
+        "value": "PZ",
+        "regione": "Basilicata"
+    },
+    {
+        "text": "Prato",
+        "value": "PO",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Ragusa",
+        "value": "RG",
+        "regione": "Sicilia"
+    },
+    {
+        "text": "Ravenna",
+        "value": "RA",
+        "regione": "Emilia-Romagna"
+    },
+    {
+        "text": "Reggio di Calabria",
+        "value": "RC",
+        "regione": "Calabria"
+    },
+    {
+        "text": "Reggio nell'Emilia",
+        "value": "RE",
+        "regione": "Emilia-Romagna"
+    },
+    {
+        "text": "Rieti",
+        "value": "RI",
+        "regione": "Lazio"
+    },
+    {
+        "text": "Rimini",
+        "value": "RN",
+        "regione": "Emilia-Romagna"
+    },
+    {
+        "text": "Roma",
+        "value": "RM",
+        "regione": "Lazio"
+    },
+    {
+        "text": "Rovigo",
+        "value": "RO",
+        "regione": "Veneto"
+    },
+    {
+        "text": "Salerno",
+        "value": "SA",
+        "regione": "Campania"
+    },
+    {
+        "text": "Sassari",
+        "value": "SS",
+        "regione": "Sardegna"
+    },
+    {
+        "text": "Savona",
+        "value": "SV",
+        "regione": "Liguria"
+    },
+    {
+        "text": "Siena",
+        "value": "SI",
+        "regione": "Toscana"
+    },
+    {
+        "text": "Siracusa",
+        "value": "SR",
+        "regione": "Sicilia"
+    },
+    {
+        "text": "Sondrio",
+        "value": "SO",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Taranto",
+        "value": "TA",
+        "regione": "Puglia"
+    },
+    {
+        "text": "Teramo",
+        "value": "TE",
+        "regione": "Abruzzo"
+    },
+    {
+        "text": "Terni",
+        "value": "TR",
+        "regione": "Umbria"
+    },
+    {
+        "text": "Torino",
+        "value": "TO",
+        "regione": "Piemonte"
+    },
+    {
+        "text": "Trapani",
+        "value": "TP",
+        "regione": "Sicilia"
+    },
+    {
+        "text": "Trento",
+        "value": "TN",
+        "regione": "Trentino-Alto Adige/Südtirol"
+    },
+    {
+        "text": "Treviso",
+        "value": "TV",
+        "regione": "Veneto"
+    },
+    {
+        "text": "Trieste",
+        "value": "TS",
+        "regione": "Friuli-Venezia Giulia"
+    },
+    {
+        "text": "Udine",
+        "value": "UD",
+        "regione": "Friuli-Venezia Giulia"
+    },
+    {
+        "text": "Varese",
+        "value": "VA",
+        "regione": "Lombardia"
+    },
+    {
+        "text": "Venezia",
+        "value": "VE",
+        "regione": "Veneto"
+    },
+    {
+        "text": "Verbano-Cusio-Ossola",
+        "value": "VB",
+        "regione": "Piemonte"
+    },
+    {
+        "text": "Vercelli",
+        "value": "VC",
+        "regione": "Piemonte"
+    },
+    {
+        "text": "Verona",
+        "value": "VR",
+        "regione": "Veneto"
+    },
+    {
+        "text": "Vibo Valentia",
+        "value": "VV",
+        "regione": "Calabria"
+    },
+    {
+        "text": "Vicenza",
+        "value": "VI",
+        "regione": "Veneto"
+    },
+    {
+        "text": "Viterbo",
+        "value": "VT",
+        "regione": "Lazio"
+    }
+]

@@ -205,3 +205,11 @@ ipcMain.on("loadFile", (e, args:string) => {
     })
 
 })
+
+/**
+ * testing
+ */
+// ipcMain.on("test", (e, args) => {
+//     console.log(province)
+//     e.returnValue = "done"
+// })
