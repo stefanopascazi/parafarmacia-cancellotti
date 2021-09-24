@@ -2,6 +2,7 @@
     "name": "easy-amazon-order-converter",
     "main": "public/electron.js",
     "homepage": "./",
+    "description": "Sample electron app for convert Amazon Order to SDA Crono LDV",
     "version": "0.1.0",
     "private": true,
     "author": {
@@ -49,17 +50,14 @@
         "@types/react": "^17.0.8",
         "@types/react-dom": "^17.0.5",
         "bootstrap": "^4.6.0",
-        "concurrently": "^6.2.0",
         "cross-env": "^7.0.3",
         "electron-is-dev": "^2.0.0",
         "fs": "^0.0.1-security",
-        "papaparse": "^5.3.1",
         "react": "^17.0.2",
         "react-bootstrap": "^1.6.1",
         "react-dom": "^17.0.2",
         "react-scripts": "4.0.3",
         "typescript": "^4.3.2",
-        "wait-on": "^5.3.0",
         "web-vitals": "^1.1.2"
     },
     "scripts": {
@@ -67,6 +65,8 @@
         "react:build": "react-scripts build",
         "react:test": "react-scripts test",
         "react:eject": "react-scripts eject",
+        "electron:start": "electron .",
+        "electron:ts:compile": "tsc --project ./public && npm run electron:start",
         "release": "npm run react:build && npm run electron-builder --publish=always",
         "electron:generate:icons": "electron-icon-builder --input=./public/logo512.png --output=./ --flatten && cp -r ./icons/* ./build",
         "electron:build": "electron-builder",
@@ -78,7 +78,7 @@
         "build:win": "npm run react:build && npm run electron:generate:icons && npm run electron:build:win:32 && npm run electron:build:win:64",
         "build": "npm run react:build && npm run electron:generate:icons && npm run electron:build:linux && npm run electron:build:win",
         "electron:deploy": "electron-builder --linux --win",
-        "start": "concurrently \"cross-env BROWSER=none npm run react:start\" \"wait-on http://localhost:3000 && electron .\""
+        "start": "concurrently \"cross-env BROWSER=none npm run react:start\" \"wait-on http://localhost:3000 && npm run electron:ts:compile\""
     },
     "eslintConfig": {
         "extends": [
@@ -99,8 +99,10 @@
         ]
     },
     "devDependencies": {
+        "concurrently": "^6.2.1",
         "electron": "^13.0.1",
         "electron-builder": "^22.10.5",
-        "electron-icon-builder": "^2.0.1"
+        "electron-icon-builder": "^2.0.1",
+        "wait-on": "^6.0.0"
     }
 }
