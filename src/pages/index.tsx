@@ -12,7 +12,7 @@ interface IHomeDataInterface {
 
 const Home: React.FC<IHomeDataInterface> = ({ searchText, children }: IHomeDataInterface): JSX.Element => {
 
-    const [rows, setRows] = React.useState<Array<Array<string>>>([[]])
+    const [rows, setRows] = React.useState<string[][] | false>(false)
 
     const importedFile = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files[0];
@@ -21,37 +21,40 @@ const Home: React.FC<IHomeDataInterface> = ({ searchText, children }: IHomeDataI
         const array = ipcRenderer.sendSync("loadFile", (file as any).path)
 
         setRows(array)
-        console.log(array)
+        e.target.value = ""
 
     }
 
-    const save = () => {        
-        const csv = rows.slice(1).map((row) => {
+    const save = () => {
+
+        const csv = rows && rows.slice(1).map((row) => {
             const lines = `${row[17]},${row[17]},${row[18]},${row[23]},${row[21]},${row[22]},ITA,${row[9]},,${row[9]},`
             return lines
         })
         
         const result = ipcRenderer.sendSync("saveFile", csv.join("\n"))
-        return true;
+        return result && true;
+    }
+
+    const clean = ():void => {
+        setRows(false)
     }
 
     return <>
-        <Row className={"py-3"}>
-            <Col>
+        <Row className={"m-3 pt-3 bg-white border-bottom border-light border-4 rounded-3 align-items-center"}>
+            <Col xs={"4"} className="me-auto">
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Carica un file</Form.Label>
                         <Form.Control type="file" placeholder="carica il file ordini" onChangeCapture={importedFile} />
                     </Form.Group>
                 </Form>
             </Col>
+            {rows && <Col xs={"6"}>
+                <Button variant={"primary"} type={"button"} onClick={save}>Scarica formato per SDA Cronos</Button> <Button variant={"warning"} type={"button"} onClick={clean}>Rimuovi</Button>
+            </Col>}
         </Row>
-        {rows.length > 0 && <Row className={"py-3"}>
-            <Col>
-                <Button variant={"primary"} type={"button"} onClick={save}>Scarica formato per SDA Crono</Button>
-            </Col>
-        </Row>}
-        <Table rows={rows} />
+        
+        {rows && <Table rows={rows} />}
     </>
 }
 

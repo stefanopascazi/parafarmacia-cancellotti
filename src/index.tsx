@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {HashRouter} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 
@@ -10,7 +11,7 @@ const Render: React.FC = (): JSX.Element => {
 	const [show, setShow] = React.useState<boolean>(false)
 	React.useEffect(() => {
 		let body:HTMLElement = document.body;
-		body.classList.add("bg-light")
+		body.classList.add("bg-secondary")
 
 		setShow(true);
 	}, [])
@@ -19,7 +20,9 @@ const Render: React.FC = (): JSX.Element => {
 }
 
 ReactDOM.render(
-		<Render />,
+	<HashRouter>
+		<Render />
+	</HashRouter>,
 	document.getElementById('root')
 );
 

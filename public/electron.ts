@@ -17,7 +17,6 @@ const createWindow = (): void => {
         },
         title: "Mini Gest",
         icon: path.join(__dirname, 'logo192.png'),
-        /* frame: false */
     });
     /**
      * Controllo di versione

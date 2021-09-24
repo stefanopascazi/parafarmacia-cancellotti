@@ -65,7 +65,6 @@ var createWindow = function () {
         },
         title: "Mini Gest",
         icon: path_1.default.join(__dirname, 'logo192.png'),
-        /* frame: false */
     });
     /**
      * Controllo di versione

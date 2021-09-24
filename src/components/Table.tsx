@@ -12,7 +12,7 @@ const Thead = ({rows}) => {
 const Tbody = ({rows}) => {
     return <tbody>
         { rows.slice(1).map((row: Array<string>,i: number) => {
-            return <tr key={i}>
+            return row.length > 1 && <tr key={i}>
                 {row.map((line: string, a: number) => { return <td key={a}>{line}</td>})}
             </tr>
         })}
@@ -21,9 +21,9 @@ const Tbody = ({rows}) => {
 
 export const Table: Function = ({rows}) => {
 
-    return <Row>
-            <Col>
-                <TableB bordered striped hover>
+    return <Row className={"m-3 bg-white border-bottom border-light border-4 rounded-3 pt-3"}>
+            <Col xs={"6"}>
+                <TableB bordered striped hover className={"bg-white"}>
                     <Thead rows={rows}/>
                     <Tbody rows={rows} />
                 </TableB>
