@@ -47,7 +47,7 @@
         "electron:start": "electron .",
         "electron:ts:compile": "tsc --project ./public && npm run electron:start",
         "release": "npm run react:build && npm run electron-builder --publish=always",
-        "electron:generate:icons": "electron-icon-builder --input=./public/logo512.png --output=./ --flatten && cp -r ./icons/* ./build",
+        "electron:generate:icons": "electron-icon-builder --input=./public/logo192.png --output=./ --flatten && cp -r ./icons/* ./build",
         "electron:build": "electron-builder build --win --linux --publish never",
         "electron:deploy": "electron-builder build --win --linux --publish always",
         "electron:build:linux": "electron-builder --linux",

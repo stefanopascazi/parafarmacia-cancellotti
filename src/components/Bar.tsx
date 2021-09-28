@@ -7,7 +7,7 @@ const Bar: React.FC = (): JSX.Element => {
 		<Navbar>
 			<Navbar.Brand>
 				<img
-					src="/logo192.png"
+					src="./logo192.png"
 					width="24"
 					height="24"
 					className="d-inline-block align-top"

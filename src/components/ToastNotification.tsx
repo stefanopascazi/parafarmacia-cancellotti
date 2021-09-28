@@ -28,7 +28,7 @@ const ToastNotification: React.FC = (): JSX.Element => {
     }
 
     return (
-        <ToastContainer position={"bottom-start"}>
+        <ToastContainer position={"bottom-start"} style={{zIndex: 9999}}>
             <Toast show={toast} onClose={toogleToast} delay={5000} autohide>
                 <Toast.Header>
                     <img src="./logo192.png" className="rounded me-2" style={{width: "20px"}} alt="" />

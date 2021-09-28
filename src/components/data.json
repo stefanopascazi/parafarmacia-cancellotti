@@ -299,6 +299,11 @@
         "regione": "Lombardia"
     },
     {
+        "text": "Monza e Brianza",
+        "value": "MB",
+        "regione": "Lombardia"
+    },
+    {
         "text": "Napoli",
         "value": "NA",
         "regione": "Campania"

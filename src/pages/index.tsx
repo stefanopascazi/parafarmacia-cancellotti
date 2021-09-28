@@ -33,9 +33,11 @@ const Home: React.FC<IHomeDataInterface> = ({ children }: IHomeDataInterface): J
 
         const csv: string[] = rows && rows.slice(1).map( (row: string[]) => {
             
-            const value: Provincia | false = province.find( (element: Provincia) => element.text === row[22] ? element : false )
+            const value: Provincia | false = province.find( (element: Provincia) => typeof row[22] !== 'undefined' && element.text.toLowerCase() === row[22].toLowerCase() ? element : false )
+            
+            if(typeof row[17] === 'undefined') return "";
 
-            const lines: string = `${row[17]},${row[17]},${row[18]},${row[23]},${row[21]},${value ? value.value : row[22]},ITA,${row[9]},,${row[9]},`
+            const lines: string = `${row[17]},${row[17]},${row[18]},${row[23]},${row[21]},${value ? value.value.toUpperCase() : row[22].toUpperCase()},ITA,${row[9]},,${row[9]},`
             return lines
         })
 

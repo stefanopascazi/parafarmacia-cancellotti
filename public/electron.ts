@@ -130,7 +130,7 @@ const template: any = [
         ]
     },
     {
-        role: 'help',
+        role: 'i',
         submenu: [{
             label: 'About the author',
             click: async() => {
