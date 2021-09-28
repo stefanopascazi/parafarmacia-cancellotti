@@ -3,7 +3,7 @@
     "main": "public/electron.js",
     "homepage": "./",
     "description": "Sample electron app for convert Amazon Order to SDA Crono LDV",
-    "version": "0.3.1",
+    "version": "1.0.0",
     "private": true,
     "author": {
         "name": "Stefano Pascazi",
